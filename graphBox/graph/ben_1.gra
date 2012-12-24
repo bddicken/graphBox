@@ -1,0 +1,25 @@
+#
+# add fanily nodes
+#
+
+E ben
+E john
+E amy
+E daniel
+E eric
+E erin
+
+#
+# add family edges
+#
+
+V eric <-> erin
+V ben <-> eric
+V john <-> eric
+V amy <-> eric
+V daniel <-> eric
+V ben <-> erin
+V john <-> erin
+V amy <-> erin
+V daniel <-> erin
+
