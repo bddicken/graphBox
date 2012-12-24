@@ -10,8 +10,7 @@ var gNodeSize = 2;
 var gEdgeWidth = 1;
 var gNodeType = "line";
 
-(function($){
-
+//(function($){
     var Renderer = function(canvas){
         this.edgeType = "drawLineEdge()";
         //this.edgeWidth = 1;
@@ -182,8 +181,7 @@ var gNodeType = "line";
         */
 
     })
-
-})(this.jQuery)
+//})(this.jQuery)
 
 /**
  * a custom function to add a node

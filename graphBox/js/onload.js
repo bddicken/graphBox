@@ -38,7 +38,7 @@ window.onload = function() {
         animate: "fast", 
         step: 1,
         max: 40,
-        min: 2,
+        min: 5,
         slide: 
         function() {
             var size = $( "#nodeSizeSlider3" ).slider( "option", "value" );
@@ -61,9 +61,17 @@ window.onload = function() {
     updateGraph();
 }
 
+var clearEdges = function(edge, pt1, pt2) {
+    sys.pruneEdge(edge);
+}
+
+var clearNodes = function(node, pt) {
+    sys.pruneNode(node);
+}
+
 function updateGraph() {
-    //sys = arbor.ParticleSystem(1000, 600, 0.8, false, 30, 0.02, 0.6);
-    //sys.renderer = Renderer("#viewport");
+    sys.eachEdge(clearEdges);
+    sys.eachNode(clearNodes);
 
     var gd = document.getElementById("graphDef").value;
     fp = new FileParser(gd);
