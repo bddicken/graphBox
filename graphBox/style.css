@@ -1,4 +1,5 @@
 body {
+    font-family: sans-serif;
     display:block;
     position:fixed:
     background-color: rgb(80, 80, 80);
@@ -24,7 +25,7 @@ body {
     background-color:rgb(50, 50, 50);
     background-image: -webkit-gradient(linear, left bottom, right bottom, 
         from(rgb(200, 200, 200)),
-        to(rgb(170, 170, 170))
+        to(rgb(180, 180, 180))
     ); 
     width:250px;
     height:100%;
@@ -39,27 +40,18 @@ body {
 }
 
 #nodeSizeSlider1 {
-    top:70px !important;
+    top:80px !important;
     left:25px !important;
     width:200px !important;
     height:10px !important;
 }
 
-
-#nodeSizeSlider2 {
-    top:100px !important;
+#edgeSizeSlider1 {
+    top:120px !important;
     left:25px !important;
     width:200px !important;
     height:10px !important;
 }
-
-#nodeSizeSlider3 {
-    top:130px !important;
-    left:25px !important;
-    width:200px !important;
-    height:10px !important;
-}
-
 
 .top {
     position:fixed;
@@ -75,8 +67,8 @@ body {
 
 #graphDef {
     top:210px !important;
-    right:20px !important;
-    width:205px !important;
+    right:10px !important;
+    width:230px !important;
     height:300px !important;
 }
 

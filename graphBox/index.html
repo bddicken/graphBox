@@ -32,9 +32,8 @@
     <div class="top" id="sideBar">
         <div class="top" id="logo">GraphBox</div>
 
+        <div class="top" id="edgeSizeSlider1"></div>
         <div class="top" id="nodeSizeSlider1"></div>
-        <div class="top" id="nodeSizeSlider2"></div>
-        <div class="top" id="nodeSizeSlider3"></div>
         
         <div class="top">
             <select class="top" id="edgeType" onchange="updateEdgeType();">
@@ -47,8 +46,21 @@
     
         <textarea class="top" id="graphDef">
 # 
-# insert your graph here
-# 
+# The definition of the displayed
+# graph comes from here!
+#
+# Use hash tags to specify comments
+#
+# Use the format:
+#    E vertexName
+# to add a vertex to the graph
+#
+# Use the format:
+#    V vertex1 <-> vertex2
+# to add an edge. both end-points
+# of the edge must be previously
+# declared.
+
         
 V a1
 V a2
@@ -60,6 +72,7 @@ V x2
 V x3
 V x4
 V x5
+
 E a1 &lt;-&gt; a2
 E a1 &lt;-&gt; a3
 E a1 &lt;-&gt; a4
