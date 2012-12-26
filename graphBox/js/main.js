@@ -210,6 +210,7 @@ function addEdgeCustom(name1, name2) {
 function updateEdgeType() {
     var temp = document.getElementById('edgeType').selectedIndex;
     gNodeType = document.getElementById('edgeType').options[temp].innerHTML; 
-    console.log(temp + "  :  " + gNodeType)
+    console.log(temp + "  :  " + gNodeType);
+    sys.renderer.redraw();
 }
 
