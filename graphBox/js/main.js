@@ -8,6 +8,8 @@
 var sys;
 var gNodeSize = 2;
 var gEdgeWidth = 1;
+var gEdgeColor = "#fff";
+var gNodeColor = "#fff";
 var gNodeType = "line";
 
 //(function($){
@@ -30,7 +32,7 @@ var gNodeType = "line";
             init:function(system)
             {
                 particleSystem = system;
-                var w = $(window).width()-250,
+                var w = $(window).width()-325,
                     h = $(window).height();
                 canvas.width = w; canvas.height = h;
                 particleSystem.screenSize(w,h);
@@ -48,7 +50,7 @@ var gNodeType = "line";
                 particleSystem.eachEdge(function(edge, pt1, pt2)
                 {
                     ctx.lineWidth = gEdgeWidth;
-                    ctx.strokeStyle = "rgba(100,0,0, .333)";
+                    ctx.strokeStyle = gEdgeColor;
                     ctx.beginPath();
                     if(gNodeType == "line") {
                         ctx.moveTo(pt1.x, pt1.y)
@@ -84,15 +86,16 @@ var gNodeType = "line";
 
                     //console.log(colorInc);
 
-                    ctx.fillStyle="rgba("+node.data.r+", 50, 50, 0.7)";
+                    ctx.fillStyle=gNodeColor;
+                    ctx.lineStyle=gNodeColor;
                     ctx.beginPath();
                     ctx.arc(pt.x, pt.y, w, 0, Math.PI*2, true); 
                     ctx.closePath();
                     ctx.fill();
 
+                    ctx.fillStyle="#000";
+                    ctx.lineStyle="#000";
                     ctx.lineWidth=1;
-                    ctx.fillStyle="#ffffff";
-                    ctx.lineStyle="#ffff00";
                     ctx.font="12px sans-serif";
                     ctx.fillText(node.name, pt.x-w+4, pt.y+w/2);
                     

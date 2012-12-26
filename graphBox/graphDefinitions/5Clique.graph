@@ -1,0 +1,44 @@
+# 
+# The definition of the displayed
+# graph comes from here!
+#
+# Use hash tags to specify comments
+#
+# Use the format:
+#    E vertexName
+# to add a vertex to the graph
+#
+# Use the format:
+#    V vertex1 <-> vertex2
+# to add an edge. both end-points
+# of the edge must be previously
+# declared.
+
+        
+V a1
+V a2
+V a3
+V a4
+V a5
+V x1
+V x2
+V x3
+V x4
+V x5
+
+E a1 <-> a2
+E a1 <-> a3
+E a1 <-> a4
+E a1 <-> a5
+E a2 <-> a3
+E a2 <-> a4
+E a2 <-> a5
+E a3 <-> a4
+E a3 <-> a5
+E a4 <-> a5
+E x1 <-> a1
+E x2 <-> a2
+E x3 <-> a3
+E x4 <-> a4
+E x5 <-> a5
+

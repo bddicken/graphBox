@@ -22,16 +22,17 @@ body {
 }
 
 #sideBar {
-    background-color:rgb(50, 50, 50);
+    background-color:rgb(200, 200, 200);
     background-image: -webkit-gradient(linear, left bottom, right bottom, 
         from(rgb(200, 200, 200)),
         to(rgb(180, 180, 180))
     ); 
-    width:250px;
+    width:325px;
     height:100%;
     top:0px;
     right:0px;
     box-shadow: 0px 0px 30px 5px #000;
+    overflow:auto;
 }
 #logo {
     font-size:30px;
@@ -39,6 +40,13 @@ body {
     right:50px;
 }
 
+#nodeSizeLabel1 {
+    top:70px !important;
+    right:25px !important;
+    width:200px !important;
+    height:10px !important;
+    font-size:12px;
+}
 #nodeSizeSlider1 {
     top:80px !important;
     left:25px !important;
@@ -46,30 +54,61 @@ body {
     height:10px !important;
 }
 
+#edgeSizeLabel1 {
+    top:130px !important;
+    right:25px !important;
+    width:200px !important;
+    height:10px !important;
+    font-size:12px;
+}
 #edgeSizeSlider1 {
-    top:120px !important;
+    top:150px !important;
     left:25px !important;
     width:200px !important;
     height:10px !important;
 }
 
 .top {
-    position:fixed;
+    position: absolute;
     z-index:1 !important;
+}
+.font1 {
+    font-size:14px;
 }
 
 #edgeType {
     top:180px !important;
     right:25px !important;
-    width:200px !important;
-    height:15px !important;
+    width:275px !important;
+    height:25px !important;
 }
 
+#graphDefLabel {
+    top:300px !important;
+    right:25px !important;
+    width:275px !important;
+    height:25px !important;
+}
 #graphDef {
-    top:210px !important;
-    right:10px !important;
-    width:230px !important;
+    top:325px !important;
+    right:25px !important;
+    width:275px !important;
     height:300px !important;
+    margin-bottom:10px;
 }
 
+#edgeColorWrap {
+    top:220px !important;
+    right:25px !important;
+}
+#nodeColorWrap {
+    top:250px !important;
+    right:25px !important;
+}
+
+#spacer {
+    top:650px !important;
+    right:25px !important;
+    height: 10px;
+}
 

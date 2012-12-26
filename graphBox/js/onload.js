@@ -50,6 +50,7 @@ window.onload = function()
     });
 
     updateGraph();
+    updateColors();
 }
 
 var clearEdges = function(edge, pt1, pt2) {
@@ -67,5 +68,11 @@ function updateGraph() {
     var gd = document.getElementById("graphDef").value;
     fp = new FileParser(gd);
     fp.parseAll();
+}
+
+function updateColors() {
+    gNodeColor = document.getElementById('nodeColor').style.backgroundColor;
+    gEdgeColor = document.getElementById('edgeColor').style.backgroundColor;
+    sys.renderer.redraw();
 }
 
