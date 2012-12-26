@@ -8,9 +8,11 @@ function FileParser(parseString)
     this.error = false;
 
     this.parseAll = function(){
-        var com = null;
-        while(com = this.getLine()){
+        var com = this.getLine();
+        while(com !== 'F'){
+            //console.log(com);
             this.determineCommand(com);
+            com = this.getLine();
         }
     }
 
@@ -37,11 +39,12 @@ function FileParser(parseString)
         else if(cType == '#') {
             // comment
         }
+
     }
     
     this.getLine = function() {
         if(this.file.length < 1)
-            return null;
+            return 'F';
         var index = this.file.indexOf('\n');
         var ret = this.file.substring(0, index);
         this.file = this.file.substring(index+1, this.file.length+1);
