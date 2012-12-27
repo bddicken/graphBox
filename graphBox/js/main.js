@@ -8,8 +8,8 @@
 var sys;
 var gNodeSize = 2;
 var gEdgeWidth = 1;
-var gEdgeColor = "#fff";
-var gNodeColor = "#fff";
+var gEdgeColor = "#ffffff";
+var gNodeColor = "#ffffff";
 var gNodeType = "line";
 
 //(function($){
@@ -71,30 +71,40 @@ var gNodeType = "line";
                 particleSystem.eachNode(function(node, pt)
                 {
                     var w = ((node.data.degree)*3)+gNodeSize;
+                    var sum = 0;
                     
-                    /*
-                    if(colorInc === true) {
-                        node.data.r = (node.data.r+1);
-                        if(node.data.r > 200 )
-                            colorInc = false;
+                    if(node.data.color != undefined) {
+                        ctx.fillStyle=node.data.color;
+                        ctx.lineStyle=node.data.color;
+                        sum += parseInt(node.data.color.substring(1,3), 16);
+                        sum += parseInt(node.data.color.substring(3,5), 16);
+                        sum += parseInt(node.data.color.substring(5,7), 16);
                     } else {
-                        node.data.r = (node.data.r-1);
-                        if(node.data.r < 5 )
-                            colorInc = true;
+                        ctx.fillStyle=gNodeColor;
+                        ctx.lineStyle=gNodeColor;
+                        sum += parseInt(gNodeColor.substring(1,3), 16);
+                        sum += parseInt(gNodeColor.substring(3,5), 16);
+                        sum += parseInt(gNodeColor.substring(5,7), 16);
                     }
-                    */
 
-                    //console.log(colorInc);
+                    // node shape type
+                    if(node.data.type == 'circle') {
+                        ctx.beginPath();
+                        ctx.arc(pt.x, pt.y, w, 0, Math.PI*2, true); 
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+                    else if(node.data.type == 'none') {
+                        // draw nothing
+                    }
 
-                    ctx.fillStyle=gNodeColor;
-                    ctx.lineStyle=gNodeColor;
-                    ctx.beginPath();
-                    ctx.arc(pt.x, pt.y, w, 0, Math.PI*2, true); 
-                    ctx.closePath();
-                    ctx.fill();
+                    // determine font color
+                    var fillColor = "#000000"
+                    if(sum < 370)
+                        fillColor = "#FFFFFF"
 
-                    ctx.fillStyle="#000";
-                    ctx.lineStyle="#000";
+                    ctx.fillStyle=fillColor;
+                    ctx.lineStyle=fillColor;
                     ctx.lineWidth=1;
                     ctx.font="12px sans-serif";
                     ctx.fillText(node.name, pt.x-w+4, pt.y+w/2);
@@ -154,35 +164,9 @@ var gNodeType = "line";
         return that
     }        
 
-    $(document).ready(function()
-    {
-        this.addDeg = function(nodeStr) {
-            var tempN = sys.getNode(nodeStr);
-            tempN.data.degree++;
-        }
-
+    $(document).ready(function() {
         sys = arbor.ParticleSystem(1000, 600, 0.8, false, 30, 0.02, 0.6);
         sys.renderer = Renderer("#viewport");
-        var numNodes = 50;
-        var nIter = 1;
-
-        /*
-        addNodeCustom("v0",{degree:0, r:0});
-        while(nIter < numNodes) {
-            var nodeName = 'v'+nIter;
-            addNodeCustom(nodeName, { degree:0, r:0});
-            addEdgeCustom("v"+(nIter-1),"v"+nIter,"edge");
-            ++nIter;
-        }
-        
-        var edgeIter = 0;
-        while(edgeIter++ < numNodes){
-            var rand1 = Math.floor(Math.random()*numNodes);
-            var rand2 = Math.floor(Math.random()*numNodes);
-            addEdgeCustom("v"+rand1,"v"+rand2,"edge");
-        }
-        */
-
     })
 //})(this.jQuery)
 

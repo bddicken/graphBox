@@ -1,4 +1,3 @@
-
 /*
  * File parsing object
  */
@@ -7,7 +6,7 @@ function FileParser(parseString)
     this.file = parseString + '\n';
     this.error = false;
 
-    this.parseAll = function(){
+    this.parseAll = function() {
         var com = this.getLine();
         while(com !== 'F'){
             //console.log(com);
@@ -30,8 +29,22 @@ function FileParser(parseString)
         
         // command is adding a vertex
         else if(cType == 'V') {
-            var edgeName = command.substring(1, command.length+1).replace(/\s/g, '');
-            var didWork = addNodeCustom(edgeName, {degree:0, r:0});
+            var vertName = command.substring(1, command.length+1).replace(/\s/g, '');
+            var vertContent = vertName.split('~');
+            var vertData = null;
+            var finalVal = null;
+
+            // check integrity of data
+            if(vertContent[1] != undefined)
+                eval('vertData = ' + vertContent[1] + ';');
+            if(vertData == null){
+                this.error = true;
+                finalVal = {degree:0, type:'circle'};
+            } else {
+                finalVal = mergeObjects({degree:0, type:'circle'}, vertData);
+            }
+
+            var didWork = addNodeCustom(vertContent[0], finalVal);
             if(!didWork)
                 this.error = true;
         }
@@ -39,7 +52,6 @@ function FileParser(parseString)
         else if(cType == '#') {
             // comment
         }
-
     }
     
     this.getLine = function() {

@@ -1,25 +1,25 @@
 # 
-# The definition of the displayed
-# graph comes from here!
+# The definition of the displayed graph comes from
+# this text box here.
 #
-# Use hash tags to specify comments
+# Use hash tags to specify comments (like this)!
 #
-# Use the format:
-#    E vertexName
-# to add a vertex to the graph
+# Use the following format to add a vertex:
+#    E vertexName ~ {var: value}
 #
-# Use the format:
+# Use the following format to add an edge. Make sure
+# that both of the end points have already been declared:
 #    V vertex1 <-> vertex2
-# to add an edge. both end-points
-# of the edge must be previously
-# declared.
-
+#
+# You can override the default node values which are:
+#     - color
+#     - type
         
-V a1
-V a2
-V a3
-V a4
-V a5
+V a1 ~ {color:'#1BE04C'}
+V a2 ~ {color:'#E01B4C'}
+V a3 ~ {color:'#E04C1B'}
+V a4 ~ {color:'#1B1B4C'}
+V a5 ~ {color:'#E0E04C'}
 V x1
 V x2
 V x3

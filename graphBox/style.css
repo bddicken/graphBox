@@ -43,28 +43,28 @@ body {
 #nodeSizeLabel1 {
     top:70px !important;
     right:25px !important;
-    width:200px !important;
+    width:275px !important;
     height:10px !important;
     font-size:12px;
 }
 #nodeSizeSlider1 {
     top:80px !important;
     left:25px !important;
-    width:200px !important;
+    width:275px !important;
     height:10px !important;
 }
 
 #edgeSizeLabel1 {
     top:130px !important;
     right:25px !important;
-    width:200px !important;
+    width:275px !important;
     height:10px !important;
     font-size:12px;
 }
 #edgeSizeSlider1 {
     top:150px !important;
     left:25px !important;
-    width:200px !important;
+    width:275px !important;
     height:10px !important;
 }
 
@@ -95,15 +95,16 @@ body {
     width:275px !important;
     height:300px !important;
     margin-bottom:10px;
+    white-space:nowrap;
 }
 
 #edgeColorWrap {
     top:220px !important;
-    right:25px !important;
+    right:75px !important;
 }
 #nodeColorWrap {
     top:250px !important;
-    right:25px !important;
+    right:75px !important;
 }
 
 #spacer {
