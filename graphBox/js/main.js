@@ -6,11 +6,12 @@
 
 // global
 var sys;
-var gNodeSize = 2;
+var gNodeSize = 5;
 var gEdgeWidth = 1;
 var gEdgeColor = "#ffffff";
 var gNodeColor = "#ffffff";
-var gNodeType = "line";
+var gNodeType = "circle";
+var gEdgeType = "line";
 
 //(function($){
     var Renderer = function(canvas){
@@ -36,9 +37,10 @@ var gNodeType = "line";
                     h = $(window).height();
                 canvas.width = w; canvas.height = h;
                 particleSystem.screenSize(w,h);
+                ctx.textAlign = 'center';
                 that.redraw();
                 particleSystem.screenPadding(40);
-                
+
                 // set up some event handlers to allow for node-dragging
                 that.initMouseHandling()
             },
@@ -52,12 +54,12 @@ var gNodeType = "line";
                     ctx.lineWidth = gEdgeWidth;
                     ctx.strokeStyle = gEdgeColor;
                     ctx.beginPath();
-                    if(gNodeType == "line") {
+                    if(gEdgeType == "line") {
                         ctx.moveTo(pt1.x, pt1.y)
                         ctx.lineTo(pt2.x, pt2.y)
                         ctx.stroke()
                     } 
-                    else if(gNodeType = "circle") {
+                    else if(gEdgeType == "circle") {
                         var distance = Math.sqrt( Math.pow(pt1.x - pt2.x, 2) + Math.pow(pt1.y - pt2.y, 2) );
                         var halfx = Math.min(pt1.x, pt2.x) + Math.abs(pt1.x - pt2.x, 2)/2 ;
                         var halfy = Math.min(pt1.y, pt2.y) + Math.abs(pt1.y - pt2.y, 2)/2 ;
@@ -72,7 +74,9 @@ var gNodeType = "line";
                 {
                     var w = ((node.data.degree)*3)+gNodeSize;
                     var sum = 0;
-                    
+                    var localType = null;
+                   
+                    // determine if the color is specified in this node
                     if(node.data.color != undefined) {
                         ctx.fillStyle=node.data.color;
                         ctx.lineStyle=node.data.color;
@@ -87,14 +91,25 @@ var gNodeType = "line";
                         sum += parseInt(gNodeColor.substring(5,7), 16);
                     }
 
+                    
+                    // determine if the type is specified in this node
+                    if(node.data.type != undefined) {
+                        localType = node.data.type;
+                    } else {
+                        localType = gNodeType;
+                    }
+
                     // node shape type
-                    if(node.data.type == 'circle') {
+                    if(localType == 'circle') {
                         ctx.beginPath();
                         ctx.arc(pt.x, pt.y, w, 0, Math.PI*2, true); 
                         ctx.closePath();
                         ctx.fill();
                     }
-                    else if(node.data.type == 'none') {
+                    else if(localType == 'rect') {
+                        ctx.fillRect(pt.x-(w),pt.y-(w),w+w,w+w);
+                    }
+                    else if(localType == 'none') {
                         // draw nothing
                     }
 
@@ -107,7 +122,7 @@ var gNodeType = "line";
                     ctx.lineStyle=fillColor;
                     ctx.lineWidth=1;
                     ctx.font="12px sans-serif";
-                    ctx.fillText(node.name, pt.x-w+4, pt.y+w/2);
+                    ctx.fillText(node.name, pt.x, pt.y+6);
                     
                 })
             },
@@ -193,8 +208,8 @@ function addEdgeCustom(name1, name2) {
 
 function updateEdgeType() {
     var temp = document.getElementById('edgeType').selectedIndex;
-    gNodeType = document.getElementById('edgeType').options[temp].innerHTML; 
-    console.log(temp + "  :  " + gNodeType);
+    gEdgeType = document.getElementById('edgeType').options[temp].innerHTML; 
+    console.log(temp + "  :  " + gEdgeType);
     sys.renderer.redraw();
 }
 

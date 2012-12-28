@@ -18,8 +18,8 @@
 V a1 ~ {color:'#1BE04C'}
 V a2 ~ {color:'#E01B4C'}
 V a3 ~ {color:'#E04C1B'}
-V a4 ~ {color:'#1B1B4C'}
-V a5 ~ {color:'#E0E04C'}
+V a4 ~ {color:'#1B1B4C', type:'rect'}
+V a5 ~ {color:'#E0E04C', type:'rect'}
 V x1
 V x2
 V x3

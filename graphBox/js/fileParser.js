@@ -39,9 +39,9 @@ function FileParser(parseString)
                 eval('vertData = ' + vertContent[1] + ';');
             if(vertData == null){
                 this.error = true;
-                finalVal = {degree:0, type:'circle'};
+                finalVal = {degree:0};
             } else {
-                finalVal = mergeObjects({degree:0, type:'circle'}, vertData);
+                finalVal = mergeObjects({degree:0}, vertData);
             }
 
             var didWork = addNodeCustom(vertContent[0], finalVal);
