@@ -30,41 +30,52 @@ body {
     width:325px;
     height:100%;
     top:0px;
+    bottom:0px;
     right:0px;
-    box-shadow: 0px 0px 30px 5px #000;
+    box-shadow: 0px 0px 30px 5px rgb(80, 80, 80);
     overflow:auto;
+    border-style:solid;
+    border-width:5px;
+    border-color: rgb(100, 150, 200);
 }
 #logo {
-    font-size:30px;
-    top:10px;
-    right:50px;
+    font-size:32px;
+    top:15px;
+    right:85px;
+    color: rgb(50, 100, 150);
+}
+#logoBox {
+    border-style:solid;
+    border-width:5px;
+    border-color: rgb(100, 150, 200);
+    color: rgb(50, 100, 150);
+    margin-left:4px;
+    padding:2px;
 }
 
-#nodeSizeLabel1 {
-    top:70px !important;
-    right:25px !important;
-    width:275px !important;
-    height:10px !important;
-    font-size:12px;
-}
-#nodeSizeSlider1 {
+#nodeSizeLabel {
     top:80px !important;
-    left:25px !important;
-    width:275px !important;
+    right:215px !important;
+    width:85px !important;
+    height:10px !important;
+}
+#nodeSizeSliderOuter {
+    top:80px !important;
+    right:25px !important;
+    width:175px !important;
     height:10px !important;
 }
 
-#edgeSizeLabel1 {
-    top:130px !important;
-    right:25px !important;
-    width:275px !important;
+#edgeSizeLabel {
+    top:110px !important;
+    right:215px !important;
+    width:85px !important;
     height:10px !important;
-    font-size:12px;
 }
-#edgeSizeSlider1 {
-    top:150px !important;
-    left:25px !important;
-    width:275px !important;
+#edgeSizeSliderOuter {
+    top:110px !important;
+    right:25px !important;
+    width:175px !important;
     height:10px !important;
 }
 
@@ -74,14 +85,44 @@ body {
 }
 .font1 {
     font-size:14px;
+    text-align:right;
 }
 
-#edgeType {
-    top:180px !important;
-    right:25px !important;
-    width:275px !important;
+#edgeTypeLabel {
+    top:140px !important;
+    right:215px !important;
+    width:85px !important;
     height:25px !important;
 }
+#edgeTypeDrop {
+    top:140px !important;
+    right:25px !important;
+    width:175px !important;
+    height:25px !important;
+}
+
+#nodeTypeLabel {
+    top:170px !important;
+    right:215px !important;
+    width:85px !important;
+    height:25px !important;
+}
+#nodeTypeDrop {
+    top:170px !important;
+    right:25px !important;
+    width:175px !important;
+    height:25px !important;
+}
+
+#edgeColorWrap {
+    top:200px !important;
+    right:25px !important;
+}
+#nodeColorWrap {
+    top:230px !important;
+    right:25px !important;
+}
+
 
 #graphDefLabel {
     top:300px !important;
@@ -93,23 +134,15 @@ body {
     top:325px !important;
     right:25px !important;
     width:275px !important;
-    height:300px !important;
+    height:400px !important;
     margin-bottom:10px;
     white-space:nowrap;
 }
 
-#edgeColorWrap {
-    top:220px !important;
-    right:75px !important;
-}
-#nodeColorWrap {
-    top:250px !important;
-    right:75px !important;
-}
-
 #spacer {
-    top:650px !important;
+    top:750px !important;
     right:25px !important;
     height: 10px;
+    color: rgba(0, 0, 0, 0.0);
 }
 

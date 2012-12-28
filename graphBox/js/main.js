@@ -106,7 +106,7 @@ var gEdgeType = "line";
                         ctx.closePath();
                         ctx.fill();
                     }
-                    else if(localType == 'rect') {
+                    else if(localType == 'rectangle') {
                         ctx.fillRect(pt.x-(w),pt.y-(w),w+w,w+w);
                     }
                     else if(localType == 'none') {
@@ -207,9 +207,16 @@ function addEdgeCustom(name1, name2) {
 }
 
 function updateEdgeType() {
-    var temp = document.getElementById('edgeType').selectedIndex;
-    gEdgeType = document.getElementById('edgeType').options[temp].innerHTML; 
+    var temp = document.getElementById('edgeTypeDrop').selectedIndex;
+    gEdgeType = document.getElementById('edgeTypeDrop').options[temp].innerHTML; 
     console.log(temp + "  :  " + gEdgeType);
+    sys.renderer.redraw();
+}
+
+function updateNodeType() {
+    var temp = document.getElementById('nodeTypeDrop').selectedIndex;
+    gNodeType = document.getElementById('nodeTypeDrop').options[temp].innerHTML; 
+    console.log(temp + "  :  " + gNodeType);
     sys.renderer.redraw();
 }
 

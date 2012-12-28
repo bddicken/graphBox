@@ -30,18 +30,31 @@
         <canvas id="viewport"></canvas> 
     </div>
 
-    <div class="top" id="sideBar">
-        <div class="top" id="logo">GraphBox</div>
+    <div class="top font1" id="sideBar">
+        <div class="top" id="logo">Graph<span id="logoBox">Box</span></div>
 
-        <div class="top" id="edgeSizeLabel1">Edge Size</div>
-        <div class="top" id="edgeSizeSlider1"></div>
+        <!-- SLIDER FOR ALTERING NODE SIZE -->
+        <span class="top" id="nodeSizeLabel">Node Size</span>
+        <span class="top" id="nodeSizeSliderOuter">
+            <div id="nodeSizeSlider1"></div>
+        </span>
+       
+        <!-- SLIDER FOR ALTERING EDGE SIZE -->
+        <span class="top" id="edgeSizeLabel">Edge Size</span>
+        <span class="top" id="edgeSizeSliderOuter">
+            <div id="edgeSizeSlider1"></div>
+        </span>
 
-        <div class="top" id="nodeSizeLabel1">Node Size</div>
-        <div class="top" id="nodeSizeSlider1"></div>
-        
-        <select class="top" id="edgeType" onchange="updateEdgeType();">
+        <span class="top" id="edgeTypeLabel">Edge Type</span>
+        <select id="edgeTypeDrop" class="top" onchange="updateEdgeType();">
             <option class="top" value="line">line</option>
             <option class="top" value="circle">circle</option>
+        </select>
+
+        <span class="top" id="nodeTypeLabel">Node Type</span>
+        <select id="nodeTypeDrop" class="top" onchange="updateNodeType();">
+            <option class="top" value="circle">circle</option>
+            <option class="top" value="rect">rectangle</option>
         </select>
 
         <div class="top font1" id="edgeColorWrap">Edge Color <input class="color" id="edgeColor" value="#632626" onchange="updateColors();"></div>
