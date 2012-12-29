@@ -1,0 +1,69 @@
+#
+# 10-clique
+# 
+        
+V a1 ~ {color:'#1BE04C'}
+V a2 ~ {color:'#E01B4C'}
+V a3 ~ {color:'#E04C1B'}
+V a4 ~ {color:'#1B1B4C', type:'rectangle'}
+V a5 ~ {color:'#E0E04C', type:'rectangle'}
+V a6 ~ {color:'#1BE04C'}
+V a7 ~ {color:'#E01B4C'}
+V a8 ~ {color:'#E04C1B'}
+V a9 ~ {color:'#1B1B4C', type:'rectangle'}
+V a10 ~ {color:'#E0E04C', type:'rectangle'}
+
+E a1 <-> a2
+E a1 <-> a3
+E a1 <-> a4
+E a1 <-> a5
+E a1 <-> a6
+E a1 <-> a7
+E a1 <-> a8
+E a1 <-> a9
+E a1 <-> a10
+
+E a2 <-> a3
+E a2 <-> a4
+E a2 <-> a5
+E a2 <-> a6
+E a2 <-> a7
+E a2 <-> a8
+E a2 <-> a9
+E a2 <-> a10
+
+E a3 <-> a4
+E a3 <-> a5
+E a3 <-> a6
+E a3 <-> a7
+E a3 <-> a8
+E a3 <-> a9
+E a3 <-> a10
+
+E a4 <-> a5
+E a4 <-> a6
+E a4 <-> a7
+E a4 <-> a8
+E a4 <-> a9
+E a4 <-> a10
+
+E a5 <-> a6
+E a5 <-> a7
+E a5 <-> a8
+E a5 <-> a9
+E a5 <-> a10
+
+E a6 <-> a7
+E a6 <-> a8
+E a6 <-> a9
+E a6 <-> a10
+
+E a7 <-> a8
+E a7 <-> a9
+E a7 <-> a10
+
+E a8 <-> a9
+E a8 <-> a10
+
+E a9 <-> a10
+

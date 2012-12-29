@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     display:block;
-    position:fixed:
+    position:fixed;
     background-color: rgb(80, 80, 80);
     padding:0px;
     margin:0px;
@@ -23,20 +23,18 @@ body {
 
 #sideBar {
     background-color:rgb(200, 200, 200);
-    background-image: -webkit-gradient(linear, left bottom, right bottom, 
-        from(rgb(200, 200, 200)),
-        to(rgb(180, 180, 180))
-    ); 
+    background-image:url('img/otis_redding/otis_redding.png');
+    background-repeat:repeat; 
     width:325px;
     height:100%;
     top:0px;
     bottom:0px;
     right:0px;
-    box-shadow: 0px 0px 30px 5px rgb(80, 80, 80);
+    box-shadow: 0px 0px 30px 5px rgb(120, 120, 120);
     overflow:auto;
     border-style:solid;
     border-width:5px;
-    border-color: rgb(100, 150, 200);
+    border-color: rgba(100, 150, 200, 0.6);
 }
 #logo {
     font-size:32px;
@@ -48,7 +46,8 @@ body {
     border-style:solid;
     border-width:5px;
     border-color: rgb(100, 150, 200);
-    color: rgb(50, 100, 150);
+    color:#fff;
+    background-color: rgb(50, 100, 150);
     margin-left:4px;
     padding:2px;
 }
@@ -84,8 +83,10 @@ body {
     z-index:1 !important;
 }
 .font1 {
+    font-family:Tahoma, Arial;
     font-size:14px;
     text-align:right;
+    color:#FFFFFF;
 }
 
 #edgeTypeLabel {
@@ -114,15 +115,44 @@ body {
     height:25px !important;
 }
 
-#edgeColorWrap {
+#edgeColorLabel {
+    top:200px !important;
+    right:215px !important;
+    width:85px !important;
+    height:20px !important;
+}
+#edgeColor {
     top:200px !important;
     right:25px !important;
-}
-#nodeColorWrap {
-    top:230px !important;
-    right:25px !important;
+    width:175px !important;
+    height:20px !important;
 }
 
+#nodeColorLabel {
+    top:230px !important;
+    right:215px !important;
+    width:85px !important;
+    height:20px !important;
+}
+#nodeColor {
+    top:230px !important;
+    right:25px !important;
+    width:175px !important;
+    height:20px !important;
+}
+
+#bgColorLabel {
+    top:260px !important;
+    right:215px !important;
+    width:85px !important;
+    height:20px !important;
+}
+#bgColor {
+    top:260px !important;
+    right:25px !important;
+    width:175px !important;
+    height:20px !important;
+}
 
 #graphDefLabel {
     top:300px !important;

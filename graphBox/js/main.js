@@ -12,15 +12,13 @@ var gEdgeColor = "#ffffff";
 var gNodeColor = "#ffffff";
 var gNodeType = "circle";
 var gEdgeType = "line";
+var gBGColor = "#FFFFFF";
 
 //(function($){
     var Renderer = function(canvas){
         this.edgeType = "drawLineEdge()";
-        //this.edgeWidth = 1;
         this.edgeColor = "#fafafa";
 
-        //this.nodeType = "line";
-        //this.nodeSize = 8;
         this.nodeDynamicSize = false;
         this.nodeColor = "#5d5d5d"
 
@@ -46,7 +44,7 @@ var gEdgeType = "line";
             },
             
             redraw:function(){
-                ctx.fillStyle = "white";
+                ctx.fillStyle = gBGColor;
                 ctx.fillRect(0,0, canvas.width, canvas.height);
                 
                 particleSystem.eachEdge(function(edge, pt1, pt2)

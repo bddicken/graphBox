@@ -73,8 +73,10 @@ function updateGraph() {
 function updateColors() {
     gNodeColor = document.getElementById('nodeColor').style.backgroundColor;
     gEdgeColor = document.getElementById('edgeColor').style.backgroundColor;
+    gBGColor = document.getElementById('bgColor').style.backgroundColor;
     gNodeColor = colorToHex(gNodeColor);
     gEdgeColor = colorToHex(gEdgeColor);
+    gBGColor = colorToHex(gBGColor);
     sys.renderer.redraw();
 }
 
