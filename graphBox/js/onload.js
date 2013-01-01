@@ -25,7 +25,8 @@ window.onload = function()
             sys.renderer.redraw();
         } 
     });
-    $( "#nodeSizeSlider1" ).slider({ 
+
+$( "#nodeSizeSlider1" ).slider({ 
         animate: "fast", 
         step: 1,
         max: 40,
@@ -45,6 +46,52 @@ window.onload = function()
         function() {
             var size = $( "#nodeSizeSlider1" ).slider( "option", "value" );
             gNodeSize = size;
+            sys.renderer.redraw();
+        } 
+    });
+
+    $( "#edgeTransSlider1" ).slider({ 
+        animate: "fast", 
+        step: 0.02,
+        max: 1,
+        min: 0.0,
+        value: 1.0,
+        slide: 
+        function() {
+            gEdgeTrans = $( "#edgeTransSlider1" ).slider( "option", "value" );
+            sys.renderer.redraw();
+        },
+        start: 
+        function() {
+            gEdgeTrans = $( "#edgeTransSlider1" ).slider( "option", "value" );
+            sys.renderer.redraw();
+        },
+        stop: 
+        function() {
+            gEdgeTrans = $( "#edgeTransSlider1" ).slider( "option", "value" );
+            sys.renderer.redraw();
+        } 
+    });
+
+    $( "#nodeTransSlider1" ).slider({ 
+        animate: "fast", 
+        step: 0.02,
+        max: 1,
+        min: 0.0,
+        value: 1.0,
+        slide: 
+        function() {
+            gNodeTrans = $( "#nodeTransSlider1" ).slider( "option", "value" );
+            sys.renderer.redraw();
+        },
+        start: 
+        function() {
+            gNodeTrans = $( "#nodeTransSlider1" ).slider( "option", "value" );
+            sys.renderer.redraw();
+        },
+        stop: 
+        function() {
+            gNodeTrans = $( "#nodeTransSlider1" ).slider( "option", "value" );
             sys.renderer.redraw();
         } 
     });
@@ -99,4 +146,21 @@ function colorToHex(color) {
     var rgb = blue | (green << 8) | (red << 16);
     return digits[1] + '#' + rgb.toString(16);
 };
+
+doneResizing = function() {
+    //sys.eachEdge(clearEdges);
+    //sys.eachNode(clearNodes);
+    //sys = null;
+    //updateGraph();
+    //document.getElementById('sideBar').height = '100%';
+    //sys = arbor.ParticleSystem(1000, 600, 0.8, false, 30, 0.02, 0.6);
+    //sys.renderer = Renderer("#viewport");
+    //window.onload();
+}
+
+var id;
+$(window).resize(function() {
+    clearTimeout(id);
+    id = setTimeout(doneResizing, 500);
+});
 

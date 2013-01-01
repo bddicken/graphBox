@@ -13,6 +13,8 @@ var gNodeColor = "#ffffff";
 var gNodeType = "circle";
 var gEdgeType = "line";
 var gBGColor = "#FFFFFF";
+var gNodeTrans = 1.0;
+var gEdgeTrans = 1.0;
 
 //(function($){
     var Renderer = function(canvas){
@@ -52,6 +54,8 @@ var gBGColor = "#FFFFFF";
                     ctx.lineWidth = gEdgeWidth;
                     ctx.strokeStyle = gEdgeColor;
                     ctx.beginPath();
+                    ctx.globalAlpha=gEdgeTrans;
+
                     if(gEdgeType == "line") {
                         ctx.moveTo(pt1.x, pt1.y)
                         ctx.lineTo(pt2.x, pt2.y)
@@ -73,6 +77,8 @@ var gBGColor = "#FFFFFF";
                     var w = ((node.data.degree)*3)+gNodeSize;
                     var sum = 0;
                     var localType = null;
+
+                    ctx.globalAlpha=gNodeTrans;
                    
                     // determine if the color is specified in this node
                     if(node.data.color != undefined) {
@@ -89,7 +95,6 @@ var gBGColor = "#FFFFFF";
                         sum += parseInt(gNodeColor.substring(5,7), 16);
                     }
 
-                    
                     // determine if the type is specified in this node
                     if(node.data.type != undefined) {
                         localType = node.data.type;
@@ -110,6 +115,7 @@ var gBGColor = "#FFFFFF";
                     else if(localType == 'none') {
                         // draw nothing
                     }
+                    ctx.globalAlpha=1.0;
 
                     // determine font color
                     var fillColor = "#000000"

@@ -7,15 +7,15 @@
 
     <!-- CSS -->
     <link rel="styleSheet" width="800" height="500" href="style.css" type="text/css">
-    <link rel="styleSheet" width="800" height="500" href="../../../libraries/jqueryui/css/smoothness/jquery-ui-1.9.2.custom.min.css" type="text/css">
+    <link rel="styleSheet" width="800" height="500" href="lib/jqueryui/css/smoothness/jquery-ui-1.9.2.custom.min.css" type="text/css">
 
     <!-- JS LIB -->
-    <script type="text/javascript" src="../../../libraries/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="../../../libraries/jqueryui/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script type="text/javascript" src="../../../libraries/jscolor/jscolor.js"></script>
-    <script type="text/javascript" src="../../../libraries/arbor-v0.92/lib/arbor.js"></script>
-    <script type="text/javascript" src="../../../libraries/arbor-v0.92/lib/arbor-tween.js"></script>
-    <script type="text/javascript" src="../../../libraries/arbor-v0.92/src/graphics/graphics.js"></script>
+    <script type="text/javascript" src="lib/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="lib/jqueryui/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="lib/jscolor/jscolor.js"></script>
+    <script type="text/javascript" src="lib/arbor-v0.92/lib/arbor.js"></script>
+    <script type="text/javascript" src="lib/arbor-v0.92/lib/arbor-tween.js"></script>
+    <script type="text/javascript" src="lib/arbor-v0.92/src/graphics/graphics.js"></script>
     
     <!-- JS -->
     <script src="js/main.js"></script>
@@ -67,16 +67,30 @@
         <input class="color top" id="nodeColor" value="#9BAEC2" onchange="updateColors();">
         
         <!-- COLOR SELECTOR FOR THE CANVAS BACKGROUND -->
-        <span class="top" id="bgColorLabel">Background Color</span> 
+        <span class="top" id="bgColorLabel">Bg Color</span> 
         <input class="color top" id="bgColor" value="#FFFFFF" onchange="updateColors();">
+
+        <!-- SLIDER FOR ALTERING NODE TRANSPARENCY -->
+        <span class="top" id="nodeTransLabel">Node Transparency</span>
+        <span class="top" id="nodeTransSliderOuter">
+            <div id="nodeTransSlider1"></div>
+        </span>
+       
+        <!-- SLIDER FOR ALTERING EDGE TRANSPARENCY -->
+        <span class="top" id="edgeTransLabel">Edge Transparency</span>
+        <span class="top" id="edgeTransSliderOuter">
+            <div id="edgeTransSlider1"></div>
+        </span>
+
+        <div class="top" id="parseStatus"></div>
 
         <!-- TEXT AREA FOR GRAPH DEFINITION -->
         <input class="top" id="graphDefLabel" type="submit" value="update graph" onclick="updateGraph();">
         <textarea class="top" id="graphDef">
-            <?php
-                $graph = file_get_contents('./graphDefinitions/5Clique.graph');
-                echo $graph;
-            ?>
+<?php
+    $graph = file_get_contents('./graphDefinitions/5Clique.graph');
+    echo $graph;
+?>
         </textarea>
 
         <!-- SPACER -->
