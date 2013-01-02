@@ -18,12 +18,6 @@ var gEdgeTrans = 1.0;
 
 //(function($){
     var Renderer = function(canvas){
-        this.edgeType = "drawLineEdge()";
-        this.edgeColor = "#fafafa";
-
-        this.nodeDynamicSize = false;
-        this.nodeColor = "#5d5d5d"
-
         var canvas = $(canvas).get(0);
         var ctx = canvas.getContext("2d");
         var particleSystem;
@@ -39,13 +33,25 @@ var gEdgeTrans = 1.0;
                 particleSystem.screenSize(w,h);
                 ctx.textAlign = 'center';
                 that.redraw();
-                particleSystem.screenPadding(40);
+                particleSystem.screenPadding(50);
 
+                $(window).resize(that.resize)
+                that.resize()
+                
                 // set up some event handlers to allow for node-dragging
                 that.initMouseHandling()
             },
-            
+            resize:function(){
+                document.getElementById('sideBar').height = '100%';
+                var w = $(window).width()-325,
+                    h = $(window).height();
+                canvas.width = w; canvas.height = h;
+                particleSystem.screenSize(w,h);
+                ctx.textAlign = 'center';
+                that.redraw()
+            },
             redraw:function(){
+                ctx.textAlign = 'center';
                 ctx.fillStyle = gBGColor;
                 ctx.fillRect(0,0, canvas.width, canvas.height);
                 
@@ -66,8 +72,6 @@ var gEdgeTrans = 1.0;
                         var halfx = Math.min(pt1.x, pt2.x) + Math.abs(pt1.x - pt2.x, 2)/2 ;
                         var halfy = Math.min(pt1.y, pt2.y) + Math.abs(pt1.y - pt2.y, 2)/2 ;
                         ctx.arc(halfx, halfy, distance/2, 0, Math.PI*2, true); // draw arc
-                        //ctx.arc(halfx, halfy, 1, 0, 2 * Math.PI, true); //draw point
-                        //ctx.closePath();
                         ctx.stroke();
                     }
                 })

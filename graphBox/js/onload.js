@@ -147,20 +147,3 @@ function colorToHex(color) {
     return digits[1] + '#' + rgb.toString(16);
 };
 
-doneResizing = function() {
-    //sys.eachEdge(clearEdges);
-    //sys.eachNode(clearNodes);
-    //sys = null;
-    //updateGraph();
-    //document.getElementById('sideBar').height = '100%';
-    //sys = arbor.ParticleSystem(1000, 600, 0.8, false, 30, 0.02, 0.6);
-    //sys.renderer = Renderer("#viewport");
-    //window.onload();
-}
-
-var id;
-$(window).resize(function() {
-    clearTimeout(id);
-    id = setTimeout(doneResizing, 500);
-});
-

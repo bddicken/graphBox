@@ -69,7 +69,7 @@ function FileParser(parseString)
                     return;
                 }
 
-                if(vertContent.length == 1) {
+                if(vertContent.length == 1 || vertContent[1] == '') {
                     var didWork = addNodeCustom(vertContent[0], {degree:0});
                 }
                 else if(vertContent.length == 2) {
