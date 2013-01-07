@@ -70,7 +70,10 @@ var Renderer = function(canvas){
                 var sum = 0;
                 var localType = null;
 
+                // deternime alpha value
                 ctx.globalAlpha=gNodeTrans;
+                if(node.data.alpha != undefined)
+                    ctx.globalAlpha = node.data.alpha;
                    
                 // determine if the color is specified in this node
                 if(node.data.color != undefined) {
@@ -107,6 +110,8 @@ var Renderer = function(canvas){
                 else if(localType == 'none') {
                     // draw nothing
                 }
+               
+                // set alpha level for node label to 1
                 ctx.globalAlpha=1.0;
 
                 // determine font color
