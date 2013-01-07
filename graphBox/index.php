@@ -18,6 +18,7 @@
     <script type="text/javascript" src="lib/arbor-v0.92/src/graphics/graphics.js"></script>
     
     <!-- JS -->
+    <script src="js/globals.js"></script>
     <script src="js/main.js"></script>
     <script src="js/onload.js"></script>
     <script src="js/fileParser.js"></script>
@@ -60,15 +61,15 @@
 
         <!-- COLOR SELECTOR FOR EDGES -->
         <span class="top" id="edgeColorLabel">Edge Color</span> 
-        <input class="color top" id="edgeColor" value="#632626" onchange="updateColors();">
+        <input class="color top" id="edgeColor" value="#632626" onchange="sys.updateColors();">
         
         <!-- COLOR SELECTOR FOR NODES -->
         <span class="top" id="nodeColorLabel">Node Color</span> 
-        <input class="color top" id="nodeColor" value="#9BAEC2" onchange="updateColors();">
+        <input class="color top" id="nodeColor" value="#9BAEC2" onchange="sys.updateColors();">
         
         <!-- COLOR SELECTOR FOR THE CANVAS BACKGROUND -->
         <span class="top" id="bgColorLabel">Bg Color</span> 
-        <input class="color top" id="bgColor" value="#FFFFFF" onchange="updateColors();">
+        <input class="color top" id="bgColor" value="#FFFFFF" onchange="sys.updateColors();">
 
         <!-- SLIDER FOR ALTERING NODE TRANSPARENCY -->
         <span class="top" id="nodeTransLabel">Node Transparency</span>
@@ -85,7 +86,7 @@
         <div class="top" id="parseStatus"></div>
 
         <!-- TEXT AREA FOR GRAPH DEFINITION -->
-        <input class="top" id="graphDefLabel" type="submit" value="update graph" onclick="updateGraph();">
+        <input class="top" id="graphDefLabel" type="submit" value="update graph" onclick="sys.updateGraph();">
         <textarea class="top" id="graphDef">
 <?php
     $graph = file_get_contents('./graphDefinitions/5Clique.graph');

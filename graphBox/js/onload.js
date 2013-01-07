@@ -1,4 +1,10 @@
-var fp = null;
+/**
+ * @description
+ * This file contains the window.onload function. This function is run 
+ * when the browser window is ready to load the web app.
+ *
+ * @author Benjamin Dicken (bddicken@gmail.com)
+ */
 
 window.onload = function()
 {
@@ -31,6 +37,7 @@ $( "#nodeSizeSlider1" ).slider({
         step: 1,
         max: 40,
         min: 5,
+        value: 10,
         slide: 
         function() {
             var size = $( "#nodeSizeSlider1" ).slider( "option", "value" );
@@ -96,36 +103,42 @@ $( "#nodeSizeSlider1" ).slider({
         } 
     });
 
-    updateGraph();
-    updateColors();
+    // add clear edge function to the graph system
+    sys.clearEdges = function(edge, pt1, pt2) {
+        sys.pruneEdge(edge);
+    }
+
+    // add clear node function to the graph system
+    sys.clearNodes = function(node, pt) {
+        sys.pruneNode(node);
+    }
+
+    // add update graph function to the grapg system
+    sys.updateGraph = function() {
+        sys.eachEdge(sys.clearEdges);
+        sys.eachNode(sys.clearNodes);
+        var gd = document.getElementById("graphDef").value;
+        fp = new FileParser(gd);
+        fp.parseAll();
+    }
+
+    // add color update function the graph system
+    sys.updateColors = function() {
+        gNodeColor = document.getElementById('nodeColor').style.backgroundColor;
+        gEdgeColor = document.getElementById('edgeColor').style.backgroundColor;
+        gBGColor = document.getElementById('bgColor').style.backgroundColor;
+        gNodeColor = colorToHex(gNodeColor);
+        gEdgeColor = colorToHex(gEdgeColor);
+        gBGColor = colorToHex(gBGColor);
+        sys.renderer.redraw();
+    }
+
+    sys.updateGraph();
+    sys.updateColors();
 }
 
-var clearEdges = function(edge, pt1, pt2) {
-    sys.pruneEdge(edge);
-}
 
-var clearNodes = function(node, pt) {
-    sys.pruneNode(node);
-}
-
-function updateGraph() {
-    sys.eachEdge(clearEdges);
-    sys.eachNode(clearNodes);
-
-    var gd = document.getElementById("graphDef").value;
-    fp = new FileParser(gd);
-    fp.parseAll();
-}
-
-function updateColors() {
-    gNodeColor = document.getElementById('nodeColor').style.backgroundColor;
-    gEdgeColor = document.getElementById('edgeColor').style.backgroundColor;
-    gBGColor = document.getElementById('bgColor').style.backgroundColor;
-    gNodeColor = colorToHex(gNodeColor);
-    gEdgeColor = colorToHex(gEdgeColor);
-    gBGColor = colorToHex(gBGColor);
-    sys.renderer.redraw();
-}
+/********** MISC FUNCTIONS ***********/
 
 function mergeObjects(obj1,obj2) {
     var obj3 = {};

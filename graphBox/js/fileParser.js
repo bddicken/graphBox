@@ -1,6 +1,10 @@
-/*
- * File parsing object
+/**
+ * @description 
+ * File parsing object which parses a graph definition
+ * 
+ * @author Benjamin Dicken
  */
+
 function FileParser(parseString) 
 {
     this.file = parseString + '\n';
@@ -9,20 +13,24 @@ function FileParser(parseString)
     this.okMessage = "No errors found";
     this.line = 1;
 
+    /**
+     * @description
+     * The parseAll function parses the entire string (this.file) line-by-line.
+     * This function relies on other function such as determineCommand and
+     * getLine in FileParser.
+     */
     this.parseAll = function() {
 
         var lines = parseString.split("\n").length;  
 
         var com = this.getLine();
         while(com !== 'F'){
-            //console.log(com);
             this.determineCommand(com);
             com = this.getLine();
             this.line++;
         }
 
         var pAlert = document.getElementById('parseStatus');
-        
         
         if(this.error || this.line < lines) {
             pAlert.style.color = "rgb(150, 20, 20)";
@@ -33,6 +41,13 @@ function FileParser(parseString)
         }
     }
 
+    /**
+     * @description
+     * This function determines the type of command that is passed to it. Once
+     * The type is determined, it is executed.  If any command is determined
+     * to be syntactically incorrect, this.error is set to true, and the lines
+     * that contain errors are kept track of.
+     */
     this.determineCommand = function(command) {
         var cType = command.charAt(0);
         
@@ -60,18 +75,13 @@ function FileParser(parseString)
                 var vertData = null;
                 var finalVal = null;
 
-                eval('vertData = ' + vertContent[1] + ';');
-
-                if(vertData == null) {
-                    this.error = true;
-                    console.log('no vertex name');
-                    this.errorMessage = this.errorMessage.concat(', ' + this.line);
-                    return;
-                }
+                if(command.indexOf('~') != -1)
+                    eval('vertData = ' + vertContent[1] + ';');
 
                 if(vertContent.length == 1 || vertContent[1] == '') {
                     var didWork = addNodeCustom(vertContent[0], {degree:0});
                 }
+
                 else if(vertContent.length == 2) {
                     // check integrity of data
                     if(vertContent[1] != undefined)
@@ -91,32 +101,38 @@ function FileParser(parseString)
                 }
             } catch(err) {
                 this.error = true;
-                console.log('erroe: ' + err.message);
+                console.log('error: ' + err.message);
                 this.errorMessage = this.errorMessage.concat(', ' + this.line);
                 return;
             }
         }
 
+        // command is a comment
         else if(cType == '#') {
             // comment
         }
 
+        // command is whitespace
         else if(cType == '\n' || 
                 cType == ' '  ||
                 cType == ''  ||
-                cType == '\t' || 
-                cType == '\s') {
+                cType == '\t') {
             // white space
         }
-
+        
+        // not a valid command
         else {
             this.error = true;
-            console.log('other error >>>' + cType + '<<< :' + command);
-            this.errorMessage.concat(', ' + this.line);
+            console.log('other error >>>' + cType + '<<<  :::' + command + ':::');
+            this.errorMessage = this.errorMessage.concat(', ' + this.line);
             return;
         }
     }
-    
+
+    /**
+     * @description
+     * Gets the next line from the this.file string.
+     */
     this.getLine = function() {
         if(this.file.length < 1)
             return 'F';
