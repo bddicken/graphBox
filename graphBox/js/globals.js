@@ -37,3 +37,15 @@ var gBGColor = "#FFFFFF";
  * FileParsing object to parse the graph definition string.
  */
 var fp = null;
+
+
+/*
+ * Globals for graph layout behavior
+ */
+var gRepulsion = 1000;
+var gStiffness = 600;
+var gFriction = 0.8;
+var gGravity = false;
+var gFPS = 30;
+var gDT = 0.02;
+

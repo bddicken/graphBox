@@ -52,27 +52,36 @@ body {
     padding:2px;
 }
 
-#nodeSizeLabel {
+#title1 {
     top:80px;
+    right:25px;
+    width:355px;
+    height:200px;
+    color: rgb(50, 100, 150);
+    font-size:25px;
+}
+
+#nodeSizeLabel {
+    top:130px;
     right:215px;
     width:85px;
     height:10px;
 }
 #nodeSizeSliderOuter {
-    top:80px;
+    top:130px;
     right:25px;
     width:175px;
     height:10px;
 }
 
 #edgeSizeLabel {
-    top:110px;
+    top:160px;
     right:215px;
     width:85px;
     height:10px;
 }
 #edgeSizeSliderOuter {
-    top:110px;
+    top:160px;
     right:25px;
     width:175px;
     height:10px;
@@ -90,111 +99,168 @@ body {
 }
 
 #edgeTypeLabel {
-    top:140px;
+    top:190px;
     right:215px;
     width:85px;
     height:25px;
 }
 #edgeTypeDrop {
-    top:140px;
+    top:190px;
     right:25px;
     width:175px;
     height:25px;
 }
 
 #nodeTypeLabel {
-    top:170px;
+    top:220px;
     right:215px;
     width:85px;
     height:25px;
 }
 #nodeTypeDrop {
-    top:170px;
+    top:220px;
     right:25px;
     width:175px;
     height:25px;
 }
 
 #edgeColorLabel {
-    top:200px;
+    top:250px;
     right:215px;
     width:85px;
     height:20px;
 }
 #edgeColor {
-    top:200px;
+    top:250px;
     right:25px;
     width:175px;
     height:16px;
 }
 
 #nodeColorLabel {
-    top:230px;
+    top:280px;
     right:215px;
     width:85px;
     height:20px;
 }
 #nodeColor {
-    top:230px;
+    top:280px;
     right:25px;
     width:175px;
     height:16px;
 }
 
 #bgColorLabel {
-    top:260px;
+    top:310px;
     right:215px;
     width:85px;
     height:20px;
 }
 #bgColor {
-    top:260px;
+    top:310px;
     right:25px;
     width:175px;
     height:16px;
 }
 
 #nodeTransLabel {
-    top:290px;
+    top:340px;
     right:165px;
     width:135px;
     height:10px;
 }
 #nodeTransSliderOuter {
-    top:290px;
+    top:340px;
     right:25px;
     width:125px;
     height:10px;
 }
 
 #edgeTransLabel {
-    top:320px;
+    top:370px;
     right:165px;
     width:135px;
     height:10px;
 }
 #edgeTransSliderOuter {
-    top:320px;
+    top:370px;
     right:25px;
     width:125px;
     height:10px;
 }
 
+#title2 {
+    top:410px;
+    right:25px;
+    width:355px;
+    height:200px;
+    color: rgb(50, 100, 150);
+    font-size:25px;
+}
+
+#nodeRepulsionLabel {
+    top:460px;
+    right:165px;
+    width:135px;
+    height:10px;
+}
+#nodeRepulsionSliderOuter {
+    top:460px;
+    right:25px;
+    width:125px;
+    height:10px;
+}
+
+#graphStiffLabel {
+    top:490px;
+    right:165px;
+    width:135px;
+    height:10px;
+}
+#graphStiffSliderOuter {
+    top:490px;
+    right:25px;
+    width:125px;
+    height:10px;
+}
+
+#graphGravLabel {
+    top:520px;
+    right:165px;
+    width:135px;
+    height:10px;
+}
+#graphGravBox {
+    top:520px;
+    right:75px;
+    width:125px;
+    height:10px;
+}
+
+#title3 {
+    top:560px;
+    right:25px;
+    width:355px;
+    height:200px;
+    color: rgb(50, 100, 150);
+    font-size:25px;
+}
+
 #parseStatus {
-    top:380px;
+    top:640px;
     right:25px;
     width:275px;
     height:10px;
 }
 
 #graphDefLabel {
-    top:350px;
+    top:610px;
     right:25px;
     width:275px;
     height:25px;
 }
 #graphDef {
-    top:410px;
+    top:670px;
     right:25px;
     width:275px;
     height:400px;
@@ -203,7 +269,7 @@ body {
 }
 
 #spacer {
-    top:830px;
+    top:1130px;
     right:25px;
     height: 10px;
     color: rgba(0, 0, 0, 0.0);

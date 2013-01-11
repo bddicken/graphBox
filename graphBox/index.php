@@ -33,6 +33,9 @@
     <div class="top font1" id="sideBar">
         <div class="top" id="logo">Graph<span id="logoBox">Box</span></div>
 
+        <!-- SETTINGS LABEL -->
+        <div id="title1" class="top">Visual Settings</div>
+
         <!-- SLIDER FOR ALTERING NODE SIZE -->
         <span class="top" id="nodeSizeLabel">Node Size</span>
         <span class="top" id="nodeSizeSliderOuter">
@@ -83,12 +86,35 @@
             <div id="edgeTransSlider1"></div>
         </span>
 
+        <!-- LAYOUT SETTINGS -->
+        <div id="title2" class="top">Layout Settings</div>
+
+        <!-- SLIDER FOR ALTERING NODE REPULSION -->
+        <span class="top" id="nodeRepulsionLabel">Node Repulsion</span>
+        <span class="top" id="nodeRepulsionSliderOuter">
+            <div id="nodeRepulsionSlider1"></div>
+        </span>
+
+        <!-- SLIDER FOR ALTERING GRAPH STIFFNESS -->
+        <span class="top" id="graphStiffLabel">Stiffness</span>
+        <span class="top" id="graphStiffSliderOuter">
+            <div id="graphStiffSlider1"></div>
+        </span>
+
+        <!-- SLIDER FOR ALTERING GRAPH GRAVITY -->
+        <span class="top" id="graphGravLabel">Graph Gravity</span>
+        <span id="graphGravBox" class="top"> <input type="checkbox" name="option1" value="Gravity" onclick="gGravity=gGravity?false:true;sys.renderer.updateParams();console.log('gravity: '+gGravity);"> on/off</span>
+
+        <!-- GRAPH DEF LABEL -->
+        <div id="title3" class="top">Graph Definition</div>
+
         <div class="top" id="parseStatus"></div>
 
         <!-- TEXT AREA FOR GRAPH DEFINITION -->
         <input class="top" id="graphDefLabel" type="submit" value="update graph" onclick="sys.updateGraph();">
         <textarea class="top" id="graphDef">
 <?php
+    // remember, don't be an @$$
     $graph = file_get_contents('./graphDefinitions/5Clique.graph');
     echo $graph;
 ?>

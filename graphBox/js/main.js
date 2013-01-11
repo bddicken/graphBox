@@ -38,6 +38,14 @@ var Renderer = function(canvas){
             ctx.textAlign = 'center';
             that.redraw()
         },
+        updateParams:function() {
+            sys.parameters({repulsion: gRepulsion,
+                           stiffness: gStiffness, 
+                           friction:  gFriction, 
+                           gravity:   gGravity, 
+                           fps:       gFPS, 
+                           dt:        gDT});
+        },
         redraw:function(){
             ctx.textAlign = 'center';
             ctx.fillStyle = gBGColor;
@@ -181,7 +189,13 @@ var Renderer = function(canvas){
 }        
 
 $(document).ready(function() {
-    sys = arbor.ParticleSystem(1000, 600, 0.8, false, 30, 0.02, 0.6);
+    sys = arbor.ParticleSystem(gRepulsion,
+                               gStiffness, 
+                               gFriction, 
+                               gGravity, 
+                               gFPS, 
+                               gDT, 
+                               0.6);
     sys.renderer = Renderer("#viewport");
 })
 

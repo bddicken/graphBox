@@ -103,6 +103,52 @@ $( "#nodeSizeSlider1" ).slider({
         } 
     });
 
+    $( "#nodeRepulsionSlider1" ).slider({ 
+        animate: "fast", 
+        step: 5,
+        max: 6000,
+        min: 50,
+        value: 1000,
+        slide: 
+        function() {
+            gRepulsion = $( "#nodeRepulsionSlider1" ).slider( "option", "value" );
+            sys.renderer.updateParams();
+        },
+        start: 
+        function() {
+            gRepulsion = $( "#nodeRepulsionSlider1" ).slider( "option", "value" );
+            sys.renderer.updateParams();
+        },
+        stop: 
+        function() {
+            gRepulsion = $( "#nodeRepulsionSlider1" ).slider( "option", "value" );
+            sys.renderer.updateParams();
+        } 
+    });
+
+    $( "#graphStiffSlider1" ).slider({ 
+        animate: "fast", 
+        step: 10,
+        max: 10000,
+        min: 5,
+        value: 600,
+        slide: 
+        function() {
+            gStiffness = $( "#graphStiffSlider1" ).slider( "option", "value" );
+            sys.renderer.updateParams();
+        },
+        start: 
+        function() {
+            gStiffness = $( "#graphStiffSlider1" ).slider( "option", "value" );
+            sys.renderer.updateParams();
+        },
+        stop: 
+        function() {
+            gStiffness = $( "#graphStiffSlider1" ).slider( "option", "value" );
+            sys.renderer.updateParams();
+        } 
+    });
+
     // add clear edge function to the graph system
     sys.clearEdges = function(edge, pt1, pt2) {
         sys.pruneEdge(edge);
