@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>graphs</title>
+    <title>graphBox</title>
 
     <!-- CSS -->
     <link rel="styleSheet" width="800" height="500" href="style.css" type="text/css">
@@ -110,13 +110,34 @@
 
         <div class="top" id="parseStatus"></div>
 
+        <!-- SELECT BOX FOR GRAPH DEFINITION-->
+        <span class="top" id="graphSelLabel">Graph</span>
+        <select id="graphSelDrop" class="top" onchange="updateGraphDef();">
+            <?php
+                //path to directory to scan
+                $directory = "graphDefinitions/";
+     
+                //get all image files with a .graph extension.
+                $gNames = glob($directory . "*.graph");
+  
+                //print each file name
+                foreach($gNames as $g)
+                {
+                    echo '<option value="'.$g.'">'.$g.'</option>';
+                }
+            ?>
+        </select>
+
         <!-- TEXT AREA FOR GRAPH DEFINITION -->
         <input class="top" id="graphDefLabel" type="submit" value="update graph" onclick="sys.updateGraph();">
         <textarea class="top" id="graphDef">
 <?php
     // remember, don't be an @$$
-    $graph = file_get_contents('./graphDefinitions/5Clique.graph');
+    $graph = file_get_contents('./graphDefinitions/10Clique.graph');
     echo $graph;
+
+
+
 ?>
         </textarea>
 

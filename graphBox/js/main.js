@@ -21,7 +21,7 @@ var Renderer = function(canvas){
             particleSystem.screenSize(w,h);
             ctx.textAlign = 'center';
             that.redraw();
-            particleSystem.screenPadding(50);
+            particleSystem.screenPadding(75);
 
             $(window).resize(that.resize);
             that.resize();
@@ -36,6 +36,7 @@ var Renderer = function(canvas){
             canvas.width = w; canvas.height = h;
             particleSystem.screenSize(w,h);
             ctx.textAlign = 'center';
+            particleSystem.screenPadding(75);
             that.redraw()
         },
         updateParams:function() {
@@ -232,5 +233,15 @@ function updateNodeType() {
     gNodeType = document.getElementById('nodeTypeDrop').options[temp].innerHTML; 
     console.log(temp + "  :  " + gNodeType);
     sys.renderer.redraw();
+}
+
+function updateGraphDef() {
+    var temp = document.getElementById('graphSelDrop').selectedIndex;
+    var graphDef = document.getElementById('graphSelDrop').options[temp].innerHTML; 
+    $.get(graphDef, function(data){
+        document.getElementById('graphDef').innerHTML = data;
+        sys.updateGraph();
+    });
+
 }
 

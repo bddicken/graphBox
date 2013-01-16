@@ -106,8 +106,8 @@ $( "#nodeSizeSlider1" ).slider({
     $( "#nodeRepulsionSlider1" ).slider({ 
         animate: "fast", 
         step: 5,
-        max: 6000,
-        min: 50,
+        max: 10000,
+        min: 00,
         value: 1000,
         slide: 
         function() {
@@ -130,7 +130,7 @@ $( "#nodeSizeSlider1" ).slider({
         animate: "fast", 
         step: 10,
         max: 10000,
-        min: 5,
+        min: 0,
         value: 600,
         slide: 
         function() {

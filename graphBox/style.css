@@ -253,6 +253,19 @@ body {
     height:10px;
 }
 
+#graphSelLabel {
+    top:670px;
+    right:215px;
+    width:85px;
+    height:25px;
+}
+#graphSelDrop {
+    top:670px;
+    right:25px;
+    width:175px;
+    height:25px;
+}
+
 #graphDefLabel {
     top:610px;
     right:25px;
@@ -260,7 +273,7 @@ body {
     height:25px;
 }
 #graphDef {
-    top:670px;
+    top:700px;
     right:25px;
     width:275px;
     height:400px;
@@ -269,7 +282,7 @@ body {
 }
 
 #spacer {
-    top:1130px;
+    top:1150px;
     right:25px;
     height: 10px;
     color: rgba(0, 0, 0, 0.0);
