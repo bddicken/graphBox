@@ -1,0 +1,80 @@
+#
+# a tree
+#
+
+V root ~ {color: '#ffc3c1'}
+
+V c1A
+V c1B
+
+V c2A
+V c2B
+V c2C
+V c2D
+
+V c3A
+V c3B
+V c3C
+V c3D
+V c3E
+V c3F
+V c3G
+V c3H
+
+V c4A
+V c4B
+V c4C
+V c4D
+V c4E
+V c4F
+V c4G
+V c4H
+V c4I
+V c4J
+V c4K
+V c4L
+V c4M
+V c4N
+V c4O
+V c4P
+
+# now add the edges
+
+E root <-> c1A
+E root <-> c1B
+
+E c1A <-> c2A
+E c1A <-> c2B
+E c1B <-> c2C
+E c1B <-> c2D
+
+E c2A <-> c3A
+E c2A <-> c3B
+E c2B <-> c3C
+E c2B <-> c3D
+E c2C <-> c3E
+E c2C <-> c3F
+E c2D <-> c3G
+E c2D <-> c3H
+
+
+E c3A <-> c4A
+E c3A <-> c4B
+E c3B <-> c4C
+E c3B <-> c4D
+E c3C <-> c4E
+E c3C <-> c4F
+E c3D <-> c4G
+E c3D <-> c4H
+E c3E <-> c4I
+E c3E <-> c4J
+E c3F <-> c4K
+E c3F <-> c4L
+E c3G <-> c4M
+E c3G <-> c4N
+E c3H <-> c4O
+E c3H <-> c4P
+
+
+
+
