@@ -1,7 +1,10 @@
 graphBox
 ========
 
-graphBox
+ABOUT:
+graphBox is a simple, easy-to-use graph visualization sandbox.
+
+
 
 TODO:
 <ul>
