@@ -240,6 +240,7 @@ function updateGraphDef() {
     var graphDef = document.getElementById('graphSelDrop').options[temp].innerHTML; 
     $.get(graphDef, function(data){
         document.getElementById('graphDef').innerHTML = data;
+        document.getElementById('graphDef').value = data;
         sys.updateGraph();
     });
 
