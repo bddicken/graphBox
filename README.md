@@ -1,9 +1,8 @@
-
-ABOUT
+graphBox
 ========
-
 graphBox is a simple, easy-to-use graph visualization sandbox tool for the web.
 
+view it live here: gb.benjamindicken.com
 
 TODO
 ========
