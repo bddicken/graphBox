@@ -131,14 +131,47 @@
         <!-- TEXT AREA FOR GRAPH DEFINITION -->
         <input class="top" id="graphDefLabel" type="submit" value="update graph" onclick="sys.updateGraph();">
         <textarea class="top" id="graphDef">
-<?php
-    // remember, don't be an @$$
-    $graph = file_get_contents('./graphDefinitions/10Clique.graph');
-    echo $graph;
+# 
+# The definition of the displayed 
+# graph comes from this text box 
+# here.
+#
+# Use hash tags to specify comments.
+#
+# Format for vertex adding:
+#    V vertexName ~ {var: value}
+#
+# Format for edge adding
+#    E vertex1 <-> vertex2
+#
 
+V a1 ~ {color:'#1BE04C'}
+V a2 ~ {color:'#E01B4C'}
+V a3 ~ {color:'#E04C1B'}
+V a4 ~ {color:'#1B1B4C'}
+V a5 ~ {color:'#E0E04C'}
+V x1 ~ {type:'rectangle'}
+V x2 ~ {type:'rectangle'}
+V x3 ~ {type:'rectangle'}
+V x4 ~ {type:'rectangle'}
+V x5 ~ {type:'rectangle'}
 
+E a1 <-> a2
+E a1 <-> a3
+E a1 <-> a4
+E a1 <-> a5
+E a2 <-> a3
+E a2 <-> a4
+E a2 <-> a5
+E a3 <-> a4
+E a3 <-> a5
+E a4 <-> a5
+E x1 <-> a1
+E x2 <-> a2
+E x3 <-> a3
+E x4 <-> a4
+E x5 <-> a5
 
-?>
         </textarea>
 
         <!-- SPACER -->
