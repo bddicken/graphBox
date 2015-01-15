@@ -113,19 +113,14 @@
         <!-- SELECT BOX FOR GRAPH DEFINITION-->
         <span class="top" id="graphSelLabel">Graph</span>
         <select id="graphSelDrop" class="top" onchange="updateGraphDef();">
-            <?php
-                //path to directory to scan
-                $directory = "graphDefinitions/";
-     
-                //get all image files with a .graph extension.
-                $gNames = glob($directory . "*.graph");
-  
-                //print each file name
-                foreach($gNames as $g)
-                {
-                    echo '<option value="'.$g.'">'.$g.'</option>';
-                }
-            ?>
+            <!-- 
+            This list used to be dynamically generated based on what files existed in the ./graphDefinitions
+            directory. This was implemented in PHP. I decided to make the website more static so that it can be
+            more easily deployed on arbitrary servers (ones that don't support php for example).
+            -->
+            <option value="graphDefinitions/10Clique.graph">graphDefinitions/10Clique.graph</option>
+            <option value="graphDefinitions/5Clique.graph">graphDefinitions/5Clique.graph</option>
+            <option value="graphDefinitions/tree.graph">graphDefinitions/tree.graph</option>
         </select>
 
         <!-- TEXT AREA FOR GRAPH DEFINITION -->
